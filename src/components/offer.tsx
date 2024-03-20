@@ -4,22 +4,6 @@ import { Text, View, TouchableWithoutFeedback } from 'react-native';
 
 import { formatMoney } from '@/utils/currency';
 
-function Icon(props: {
-  name: React.ComponentProps<typeof FontAwesome6>['name'];
-  size?: number;
-  color?: string;
-}) {
-  return <FontAwesome6 {...props} />;
-}
-
-function MaterialCommunityIcon(props: {
-  name: React.ComponentProps<typeof MaterialCommunityIcons>['name'];
-  size?: number;
-  color?: string;
-}) {
-  return <MaterialCommunityIcons {...props} />;
-}
-
 type Props = {
   km: number;
   user: string;
@@ -57,19 +41,19 @@ export default function Offer({
         <View className={styles.route}>
           <View className={styles.route__info}>
             <View className={styles.route__icon}>
-              <Icon name="circle-dot" />
+              <FontAwesome6 name="circle-dot" />
             </View>
             <Text className={styles.route__title}>{from}</Text>
           </View>
           {destinations && (
             <View className={styles.destinations}>
-              <MaterialCommunityIcon name="dots-vertical" size={13} color="black" />
+              <MaterialCommunityIcons name="dots-vertical" size={13} color="black" />
               <Text className={styles.destinations__count}>+{destinations} endereços</Text>
             </View>
           )}
           <View className={styles.route__info}>
             <View className={styles.route__icon}>
-              <Icon name="map-pin" />
+              <FontAwesome6 name="map-pin" />
             </View>
             <Text className={styles.route__title}>
               {to} <Text className="text-gray-500">- {estimatedTime}</Text>
@@ -79,7 +63,7 @@ export default function Offer({
         {message && (
           <View className={styles.message}>
             <View className={styles.message__icon}>
-              <Icon name="message" />
+              <FontAwesome6 name="message" />
             </View>
             <Text className={styles.message__box}>{message}</Text>
           </View>
